@@ -1,0 +1,1 @@
+fn fibonaic(num:i8)->i8{
