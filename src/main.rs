@@ -1,19 +1,29 @@
-struct User{
-   user_name:String,
-   age:i8,
-   is_active:bool,
+struct Rect{
+   height:u8,
+   width:u8
 
 }
 
+
+impl Rect {
+    fn area(&self)->u8{
+      return self. height*self.width;
+    }
+    fn peri(&self)->u8{
+      return 2*(self.height+self.width);
+    }
+}
 fn main() {
 
-let user=User{
-   user_name:String::from("Sonu pandit"),
-   age:12,
-   is_active:true
+let rect=Rect{
+   height:2,
+   width:2
 };
+println!("{}",rect.area());
+println!("{}",rect.peri());
 
-println!("{},{},{}",user.age,user.user_name,user.is_active);
+
+
 
 }
 
