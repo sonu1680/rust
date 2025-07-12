@@ -1,18 +1,27 @@
+struct User{
+   user_name:String,
+   age:i8,
+   is_active:bool,
+
+}
+
 fn main() {
 
-   let name=String::from("Sonupandit");
-   let len=get_string_length(name);
-println!("{}",len);
+let user=User{
+   user_name:String::from("Sonu pandit"),
+   age:12,
+   is_active:true
+};
+
+println!("{},{},{}",user.age,user.user_name,user.is_active);
 
 }
 
 
-fn get_string_length(str:String)->usize{
-   return str.chars().count();
+// fn get_string_length(str:String)->usize{
+//    return str.chars().count();
    
-}
-
-
+// }
 
 // fn is_even(num:i8)->bool{
 //     if num%2==0 {
