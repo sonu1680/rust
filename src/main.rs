@@ -1,9 +1,7 @@
 // struct Rect{
 //    height:u8,
 //    width:u8
-
 // }
-
 
 // impl Rect {
 //     fn area(&self)->u8{
@@ -15,26 +13,39 @@
 // }
 
 //enum with value
-enum Shape{
-  Rectangle(f64,f64),
-  Circle(f64)
-}
+
+// enum Shape{
+//   Rectangle(f64,f64),
+//   Circle(f64)
+// }
+
+
 
 fn main() {
-let ans=calculate_area(Shape::Rectangle(2.0,3.0));
 
-println!("{}",ans)
-
+let name=String::from("Sonu pandit");
+match find_first(name){
+  Some(index)=>println!("found {}",index),
+  None=>println!("Not found")
+}
 }
 
-fn calculate_area(shape:Shape)->f64{
-let ans=match shape{
-   Shape::Rectangle(a,b)=>a+b,
-   Shape::Circle(r)=>3.14*r*r
-
-};
-return ans;
+fn find_first(s:String)->Option<i32>{
+for (index,value) in s.chars().enumerate(){
+  if value=='a'{
+    return Some(index as i32);
 }
+  }
+return None;
+}
+
+// fn calculate_area(shape:Shape)->f64{
+// match shape{
+//    Shape::Rectangle(a,b)=>a+b,
+//    Shape::Circle(r)=>3.14*r*r
+
+// }
+// }
 
 // fn get_string_length(str:String)->usize{
 //    return str.chars().count();
