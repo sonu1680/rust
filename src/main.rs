@@ -1,32 +1,40 @@
-struct Rect{
-   height:u8,
-   width:u8
+// struct Rect{
+//    height:u8,
+//    width:u8
 
+// }
+
+
+// impl Rect {
+//     fn area(&self)->u8{
+//       return self. height*self.width;
+//     }
+//     fn peri(&self)->u8{
+//       return 2*(self.height+self.width);
+//     }
+// }
+
+//enum with value
+enum Shape{
+  Rectangle(f64,f64),
+  Circle(f64)
 }
 
-
-impl Rect {
-    fn area(&self)->u8{
-      return self. height*self.width;
-    }
-    fn peri(&self)->u8{
-      return 2*(self.height+self.width);
-    }
-}
 fn main() {
+let ans=calculate_area(Shape::Rectangle(2.0,3.0));
 
-let rect=Rect{
-   height:2,
-   width:2
-};
-println!("{}",rect.area());
-println!("{}",rect.peri());
-
-
-
+println!("{}",ans)
 
 }
 
+fn calculate_area(shape:Shape)->f64{
+let ans=match shape{
+   Shape::Rectangle(a,b)=>a+b,
+   Shape::Circle(r)=>3.14*r*r
+
+};
+return ans;
+}
 
 // fn get_string_length(str:String)->usize{
 //    return str.chars().count();
